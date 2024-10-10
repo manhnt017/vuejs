@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "id": "e497",
+      "name": "1dong ho111",
+      "price": 1230,
+      "category": "Clothing",
+      "discountRate": 101
+    }
+  ]
+}
