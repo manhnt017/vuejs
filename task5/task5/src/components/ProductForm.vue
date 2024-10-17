@@ -47,7 +47,7 @@ import type { Product } from '../models/Product'
 export default defineComponent({
   props: {
     product: {
-      type: Object as () => Product | null,
+      type: Object as () => Product ,
       required: true
     }
   },

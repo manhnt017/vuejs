@@ -1,24 +1,6 @@
 {
   "tasks": [
-    {
-      "id": "2b71",
-      "title": "asdasd",
-      "completed": true
-    },
-    {
-      "id": "69ee",
-      "title": "asd",
-      "completed": true
-    },
-    {
-      "id": "7850",
-      "title": "asdad",
-      "completed": true
-    },
-    {
-      "id": "4802",
-      "title": "asda",
-      "completed": false
-    }
+    { "id": 1, "title": "Task 1", "completed": false },
+    { "id": 2, "title": "Task 2", "completed": true }
   ]
 }

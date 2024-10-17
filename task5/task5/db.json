@@ -1,11 +1,18 @@
 {
   "products": [
     {
-      "id": "e497",
-      "name": "1dong ho111",
-      "price": 1230,
+      "id": "3ac7",
+      "name": "asdasd1",
+      "price": 1231232,
+      "category": "Books",
+      "discountRate": 33
+    },
+    {
+      "id": "5af2",
+      "name": "sadsad",
+      "price": 123,
       "category": "Clothing",
-      "discountRate": 101
+      "discountRate": 123
     }
   ]
 }

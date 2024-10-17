@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
+import type { Task } from '@/types/task';
 import { defineComponent } from 'vue';
-import { Task } from '../types/Task';
 import { useStore } from 'vuex';
 
 export default defineComponent({
