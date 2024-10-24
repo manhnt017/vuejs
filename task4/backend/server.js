@@ -12,10 +12,11 @@ app.use(express.json());
 app.use("/notes", noteRoutes);
 
 // Kết nối đến MongoDB
-mongoose
-  .connect("mongodb://localhost:27017/notesdb1")
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error("MongoDB connection error:", err));
+try {
+mongoose.connect("mongodb://localhost:27017/notesdb1")
+} catch (error) {
+  console.log(error);
+}
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

@@ -4,7 +4,7 @@ import type { Product } from '@/models/Product'
 
 abstract class BaseProductManager {
   abstract addProduct(product: Product): void
-  abstract removeProduct(id: number): void
+  abstract removeProduct(id: string): void
 }
 
 class ProductManager extends BaseProductManager {
@@ -14,8 +14,8 @@ class ProductManager extends BaseProductManager {
     this.products.push(product)
   }
 
-  removeProduct(id: number): void {
-    this.products = this.products.filter((product) => product.id !== id)
+  removeProduct(id: string): void {
+    this.products = this.products.filter((product) => product._id !== id)
   }
 
   getProducts(): Product[] {

@@ -1,6 +1,6 @@
 // src/models/Product.ts
 export interface Product {
-  id: number
+  _id: string
   name: string
   price: number
   category: ProductCategory

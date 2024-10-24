@@ -47,13 +47,13 @@ import type { Product } from '../models/Product'
 export default defineComponent({
   props: {
     product: {
-      type: Object as () => Product ,
+      type: Object as () => Product,
       required: true
     }
   },
   emits: ['saveProduct'],
   setup(props, { emit }) {
-    const formProduct = ref<Omit<Product, 'id'>>({
+    const formProduct = ref<Omit<Product, '_id'>>({
       name: '',
       price: 0,
       category: 'Electronics',
@@ -79,7 +79,9 @@ export default defineComponent({
     )
 
     const submitForm = () => {
-      emit('saveProduct', { ...formProduct.value }) // ID sẽ tự động được sinh ra khi thêm sản phẩm
+      const productToSave = { ...formProduct.value }
+      console.log('Product to save:', productToSave) // Kiểm tra dữ liệu trước khi gửi
+      emit('saveProduct', productToSave)
     }
 
     return {

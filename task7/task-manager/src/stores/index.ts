@@ -34,10 +34,10 @@ export const useTaskStore = defineStore('task', {
     async updateTask(updatedTask: Task) {
       try {
         const response = await axios.put(
-          `http://localhost:3000/tasks/${updatedTask.id}`,
+          `http://localhost:3000/tasks/${updatedTask._id}`,
           updatedTask,
         )
-        const index = this.tasks.findIndex(task => task.id === updatedTask.id)
+        const index = this.tasks.findIndex(task => task._id === updatedTask._id)
         if (index !== -1) {
           this.tasks[index] = response.data
         }
@@ -46,10 +46,10 @@ export const useTaskStore = defineStore('task', {
       }
     },
 
-    async deleteTask(id: number) {
+    async deleteTask(_id: string) {
         try {
-          await axios.delete(`http://localhost:3000/tasks/${id}`)
-          const index = this.tasks.findIndex(task => task.id === id)
+          await axios.delete(`http://localhost:3000/tasks/${_id}`)
+          const index = this.tasks.findIndex(task => task._id === _id)
           if (index!== -1) {
             this.tasks.splice(index, 1)
           }

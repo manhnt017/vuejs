@@ -10,16 +10,17 @@ export class ProductManager {
   }
 
   async addProduct(product: Product): Promise<void> {
-    await axios.post(this.apiUrl, product)
+      await axios.post(this.apiUrl, product)
+   
   }
 
-  async updateProduct(id: number, product: Product): Promise<void> {
+  async updateProduct(id: string, product: Product): Promise<void> {
     await axios.put(`${this.apiUrl}/${id}`, product)
   }
 
   async removeProduct(index: number): Promise<void> {
     const products = await this.getProducts()
-    const productId = products[index].id // Lấy ID sản phẩm từ danh sách
+    const productId = products[index]._id // Lấy ID sản phẩm từ danh sách
     await axios.delete(`${this.apiUrl}/${productId}`)
   }
 }

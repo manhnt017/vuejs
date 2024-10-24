@@ -1,18 +1,25 @@
 {
   "products": [
     {
-      "id": "3ac7",
-      "name": "asdasd1",
-      "price": 1231232,
+      "id": "b568",
+      "name": "asdasd",
+      "price": 123123,
       "category": "Books",
-      "discountRate": 33
+      "discountRate": 123213
     },
     {
-      "id": "5af2",
-      "name": "sadsad",
-      "price": 123,
+      "id": "9018",
+      "name": "safsdf",
+      "price": 123123123,
       "category": "Clothing",
-      "discountRate": 123
+      "discountRate": 1231231111
+    },
+    {
+      "id": "1e36",
+      "name": "123123",
+      "price": 1123,
+      "category": "Books",
+      "discountRate": 13123
     }
   ]
 }

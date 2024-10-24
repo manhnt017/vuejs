@@ -3,7 +3,7 @@
     <h1 class="text-center mb-4">Danh Sách Công Việc</h1>
     <ul class="list-group">
       <transition-group name="fade" tag="ul">
-        <li v-for="task in tasks" :key="task.id" class="list-group-item d-flex justify-content-between align-items-center">
+        <li v-for="task in tasks" :key="task._id" class="list-group-item d-flex justify-content-between align-items-center">
           <input
             type="checkbox"
             v-model="task.completed"
@@ -11,7 +11,7 @@
             class="form-check-input me-2"
           />
           <span 
-            v-if="!isEditingTask(task.id)" 
+            v-if="!isEditingTask(task._id)" 
             :class="{ completed: task.completed }"
           >
             {{ task.title }} - {{ task.completed ? 'Hoàn thành' : 'Chưa hoàn thành' }}
@@ -24,16 +24,16 @@
           />
 
           <div>
-            <button class="btn btn-danger btn-sm" @click="deleteTask(task.id)">Xóa</button>
+            <button class="btn btn-danger btn-sm" @click="deleteTask(task._id)">Xóa</button>
             <button 
-              v-if="!isEditingTask(task.id)" 
+              v-if="!isEditingTask(task._id)" 
               class="btn btn-primary btn-sm ms-2" 
-              @click="editTask(task.id)"
+              @click="editTask(task._id)"
             >
               Cập Nhật
             </button>
             <button 
-              v-if="isEditingTask(task.id)" 
+              v-if="isEditingTask(task._id)" 
               class="btn btn-success btn-sm ms-2" 
               @click="saveUpdatedTask(task)"
             >
@@ -74,7 +74,7 @@ export default defineComponent({
       await taskStore.updateTask(task);
     };
 
-    const deleteTask = async (id: number) => {
+    const deleteTask = async (id: string) => {
       await taskStore.deleteTask(id);
     };
 

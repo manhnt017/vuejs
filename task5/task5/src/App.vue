@@ -1,14 +1,13 @@
 <template>
   <div id="app">
     <h1>Task5</h1>
-
     <product-form :product="selectedProduct" @saveProduct="handleSaveProduct" />
-
     <product-list
       :products="products"
       @editProduct="handleEditProduct"
       @deleteProduct="handleDeleteProduct"
     />
+  
   </div>
 </template>
 
@@ -40,10 +39,10 @@ export default defineComponent({
 
     // Lưu hoặc cập nhật sản phẩm
     const handleSaveProduct = async (product: Product) => {
-      if (!product.id) {
+      if (!product._id) {
         await productManager.addProduct(product)
       } else {
-        await productManager.updateProduct(product.id, product)
+        await productManager.updateProduct(product._id, product)
       }
       await loadProducts()
       selectedProduct.value = null // Reset form
