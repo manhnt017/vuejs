@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-4 mb-4" v-for="post in posts" :key="post.id">
         <div class="card">
-          <img :src="post.image" :alt="post.title" class="card-img-top" style="height: 200px; object-fit: cover;" />
+          <img :src="post.image" :alt="post.title" class="img-fluid rounded"  style="height: 200px; object-fit: cover;" loading="lazy"  />
           <div class="card-body">
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.summary }}</p>
