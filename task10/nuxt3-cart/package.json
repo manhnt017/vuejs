@@ -17,5 +17,8 @@
     "@pinia/nuxt": "^0.4.6",
     "sass": "^1.56.1",
     "vuetify": "^3.0.2"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
